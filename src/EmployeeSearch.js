@@ -8,8 +8,8 @@ const EmployeeSearch = ({ employees, updateEmployees }) => {
       inputValue === ""
         ? employees
         : employees.filter(
-            ({ name: { first } }) =>
-              first.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0
+            ({ name: { last } }) =>
+              last.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0
           );
 
     updateEmployees(filteredEmployees);

@@ -11,14 +11,13 @@ const Employees = ({ employees }) => {
       <table className="table">
         <thead>
           <tr>
-          
             <th
               scope="col"
               onClick={() => {
                 const employeesCopy = [...employees];
                 const updateSort = employeesCopy.sort((a, b) => {
-                  const nameA = a.name.first;
-                  const nameB = b.name.first;
+                  const nameA = a.name.last;
+                  const nameB = b.name.last;
 
                   if (nameA < nameB) {
                     return -1;
@@ -42,8 +41,6 @@ const Employees = ({ employees }) => {
             <th scope="col">Cell</th>
             <th scope="col">City</th>
             <th scope="col">State</th>
-            <th scope="col">Country</th>
-            <th scope="col">Postcode</th>
             
           </tr>
         </thead>
@@ -57,7 +54,7 @@ const Employees = ({ employees }) => {
               email,
               name: { first, last }
             }) => (
-              <tr key={state}>
+              <tr key={last}>
                   <td>
                   <img src={thumbnail} />
                 </td>
@@ -68,8 +65,6 @@ const Employees = ({ employees }) => {
                 <td>{cell}</td>
                 <td>{city}</td>
                 <td>{state}</td>
-                <td>{country}</td>
-                <td>{postcode}</td>
                 
               </tr>
             )
