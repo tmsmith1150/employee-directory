@@ -5,11 +5,11 @@ import { getEmployees } from "./API";
 import "./App.css";
 
 function App() {
-  const [initialUsers, updateAvailableUsers] = useState([]);
-  const [usersToRender, updateUsersToRender] = useState([]);
+  const [initialEmployees, updateAvailableEmployees] = useState([]);
+  const [employeesToRender, updateEmployeesToRender] = useState([]);
 
   useEffect(() => {
-    getEmployees().then(({ data: { results } }) => updateAvailableUsers(results));
+    getEmployees().then(({ data: { results } }) => updateAvailableEmployees(results));
   }, []);
 
   return (
@@ -18,8 +18,8 @@ function App() {
       <p>
         Search by Last Name
       </p>
-      <EmployeeSearch users={initialUsers} updateUsers={updateUsersToRender} />
-      <Employee users={usersToRender} />
+      <EmployeeSearch employees={initialEmployees} updateEmployees={updateEmployeesToRender} />
+      <Employee employees={employeesToRender} />
     </div>
   );
 }

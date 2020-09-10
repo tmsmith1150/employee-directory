@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "css";
 
-const Employees = ({ users }) => {
-  const [sortedUsers, updateSortedUsers] = useState([]);
+const Employees = ({ employees }) => {
+  const [sortedEmployees, updateSortedEmployees] = useState([]);
 
-  useEffect(() => updateSortedUsers(users), [users]);
+  useEffect(() => updateSortedEmployees(employees), [employees]);
 
   return (
     <div className="div">
@@ -15,8 +15,8 @@ const Employees = ({ users }) => {
             <th
               scope="col"
               onClick={() => {
-                const usersCopy = [...users];
-                const updateSort = usersCopy.sort((a, b) => {
+                const employeesCopy = [...employees];
+                const updateSort = employeesCopy.sort((a, b) => {
                   const nameA = a.name.first;
                   const nameB = b.name.first;
 
@@ -30,7 +30,7 @@ const Employees = ({ users }) => {
                   return 0;
                 });
 
-                updateSortedUsers(updateSort);
+                updateSortedEmployees(updateSort);
               }}
             >
               
@@ -48,7 +48,7 @@ const Employees = ({ users }) => {
           </tr>
         </thead>
         <tbody>
-          {sortedUsers.map(
+          {sortedEmployees.map(
             ({
               location: { city, state, country, postcode },
               picture: { thumbnail },
