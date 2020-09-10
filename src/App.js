@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import FilterInput from "./EmployeeSearch";
-import Table from "./Employee";
+import EmployeeSearch from "./EmployeeSearch";
+import Employee from "./Employee";
 import { getUsers } from "./API";
 import "./App.css";
 
@@ -14,12 +14,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Employee Directory</h1>
+      <h1 className="h1">Employee Directory</h1>
       <p>
         Search by Last Name
       </p>
-      <FilterInput users={initialUsers} updateUsers={updateUsersToRender} />
-      <Table users={usersToRender} />
+      <EmployeeSearch users={initialUsers} updateUsers={updateUsersToRender} />
+      <Employee users={usersToRender} />
     </div>
   );
 }
