@@ -16,13 +16,13 @@ const Employees = ({ employees }) => {
               onClick={() => {
                 const employeesCopy = [...employees];
                 const updateSort = employeesCopy.sort((a, b) => {
-                  const nameA = a.name.last;
-                  const nameB = b.name.last;
+                  const stateA = a.state;
+                  const stateB = b.state;
 
-                  if (nameA < nameB) {
+                  if (stateA < stateB) {
                     return -1;
                   }
-                  if (nameA > nameB) {
+                  if (stateA > stateB) {
                     return 1;
                   }
 
@@ -47,14 +47,14 @@ const Employees = ({ employees }) => {
         <tbody>
           {sortedEmployees.map(
             ({
-              location: { city, state, country, postcode },
+              location: { city, state },
               picture: { thumbnail },
               cell,
               phone,
               email,
               name: { first, last }
             }) => (
-              <tr key={last}>
+              <tr key={state}>
                   <td>
                   <img src={thumbnail} />
                 </td>
