@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "css";
 
-const Table = ({ users }) => {
+const Employees = ({ users }) => {
   const [sortedUsers, updateSortedUsers] = useState([]);
 
   useEffect(() => updateSortedUsers(users), [users]);
@@ -80,4 +80,4 @@ const Table = ({ users }) => {
   );
 };
 
-export default Table;
+export default Employees;

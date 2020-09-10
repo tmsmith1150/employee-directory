@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import EmployeeSearch from "./EmployeeSearch";
 import Employee from "./Employee";
-import { getUsers } from "./API";
+import { getEmployees } from "./API";
 import "./App.css";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   const [usersToRender, updateUsersToRender] = useState([]);
 
   useEffect(() => {
-    getUsers().then(({ data: { results } }) => updateAvailableUsers(results));
+    getEmployees().then(({ data: { results } }) => updateAvailableUsers(results));
   }, []);
 
   return (

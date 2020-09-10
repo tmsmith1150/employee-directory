@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const FilterInput = ({ users, updateUsers }) => {
+const EmployeeSearch = ({ users, updateUsers }) => {
   const [inputValue, updateInput] = useState("");
 
   useEffect(() => {
@@ -20,4 +20,4 @@ const FilterInput = ({ users, updateUsers }) => {
   );
 };
 
-export default FilterInput;
+export default EmployeeSearch;
