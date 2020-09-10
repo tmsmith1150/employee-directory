@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "css";
 
 const Table = ({ users }) => {
   const [sortedUsers, updateSortedUsers] = useState([]);
