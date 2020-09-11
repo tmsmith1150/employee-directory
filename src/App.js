@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="h1">Employee Directory</h1>
+      <h1 className="h1" class="animate__animated animate__fadeInLeft">Employee Directory</h1>
       <p>
         Search by Last Name
       </p>

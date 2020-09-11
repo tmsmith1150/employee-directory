@@ -34,11 +34,9 @@ const Employees = ({ employees }) => {
             >
               
             </th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
+            <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
-            <th scope="col">Cell</th>
             <th scope="col">City</th>
             <th scope="col">State</th>
             
@@ -49,7 +47,6 @@ const Employees = ({ employees }) => {
             ({
               location: { city, state },
               picture: { thumbnail },
-              cell,
               phone,
               email,
               name: { first, last }
@@ -58,11 +55,9 @@ const Employees = ({ employees }) => {
                   <td>
                   <img src={thumbnail} />
                 </td>
-                <td>{first}</td>
-                <td>{last}</td>
+                <td>{first} {last}</td>
                 <td>{email}</td>
                 <td>{phone}</td>
-                <td>{cell}</td>
                 <td>{city}</td>
                 <td>{state}</td>
                 
